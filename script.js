@@ -14,9 +14,9 @@ let Cards;
 // LeftSection Slider
 {
     var slider = document.getElementById('slider')
+    var range_label = document.getElementById('range-label')
     var left_section = document.querySelector('.leftSection')
     var right_section = document.querySelector('.rightSection')
-    slider.style.left = left_section.clientWidth + 'px'
 }
 
 // volume
@@ -41,7 +41,7 @@ let isPlay = false
 async function updateAlbums() {
     let foldersDiv = document.createElement('div')
 
-    foldersDiv.innerHTML = await (await fetch('http://127.0.0.1:5500/Songs/')).text()
+    foldersDiv.innerHTML = await (await fetch('https://sameersharma-git.github.io/Spotify-UI-Clone/Songs/')).text()
     let anchors = foldersDiv.getElementsByTagName('a')
 
     // Fetching Main Folders
@@ -58,7 +58,7 @@ async function updateAlbums() {
         let list = []
 
         let div = document.createElement('div')
-        div.innerHTML = await (await fetch(`http://127.0.0.1:5500/Songs/${Folder}`)).text()
+        div.innerHTML = await (await fetch(`https://sameersharma-git.github.io/Spotify-UI-Clone/Songs/${Folder}`)).text()
         let as = div.getElementsByTagName('a')
         for (let z = 0; z < as.length; z++) {
             const a = as[z];
@@ -75,7 +75,7 @@ async function updateAlbums() {
         let main_string = `<div data-main_folder="${Folder}" class="card-container right-section-margin-left border-4px bg-grey flex">`
         for (let z = 0; z < subFolders[i].length; z++) {
             const subFolder = subFolders[i][z];
-            let info = await ((await fetch(`http://127.0.0.1:5500/Songs/${Folder}/${subFolder}/info.json`)).json())
+            let info = await ((await fetch(`https://sameersharma-git.github.io/Spotify-UI-Clone/Songs/${Folder}/${subFolder}/info.json`)).json())
             main_string += `<div data-main_sub_folder="${subFolder}" class="cards flex" data-id="${subFolder}&${i}">
             <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
             <img src="${info.im_src}" alt="preview">
@@ -89,12 +89,12 @@ async function updateAlbums() {
     // Storing Cards in list
     Cards = document.querySelectorAll('.cards')
     CardContainer = document.querySelectorAll('.card-container')
-
+    
 }
 
 async function getSongs(Folder = '', SubFolder) {
     songs = []
-    let songData = await fetch(`http://127.0.0.1:5500/Songs/${Folder}/${SubFolder}`)
+    let songData = await fetch(`https://sameersharma-git.github.io/Spotify-UI-Clone/Songs/${Folder}/${SubFolder}`)
     let response = await songData.text()
 
     let div = document.createElement('div')
@@ -111,14 +111,14 @@ async function getSongs(Folder = '', SubFolder) {
     currentSong.src = songs[0]
     song_info.innerHTML = songs[0].split('%20')[0].split('/')[songs[0].split('%20')[0].split('/').length - 1]
     isPlay = false
-
+    
 
     //Initial Duration
     // song_timestamp.getElementsByTagName('span')[2].innerHTML = seconds_formatter(currentSong.duration)
 
     var playlist_ul = document.querySelector('.playlist').firstElementChild
     playlist_ul.innerHTML = " "
-
+    
 
     for (let i = 0; i < songs.length; i++) {
         playlist_ul.innerHTML += `<li>
@@ -126,7 +126,7 @@ async function getSongs(Folder = '', SubFolder) {
                                 <div class="playlist-info flex align-center">
                                     <img class="invert pointer" src="../Images/Icons/icons8-music.svg" alt="">
                                     <div>
-                                        <p>${songs[i].split('%20')[0].split('/')[songs[i].split('%20')[0].split('/').length - 1]}</p>
+                                        <p>${songs[i].split('%20')[0].split('/')[songs[i].split('%20')[0].split('/').length-1]}</p>
                                         <p>Artist Name</p>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@ async function main() {
     // Updating Albums
     await updateAlbums()
     await getSongs(Folders[0], subFolders[0][0])
-
+    
 
     // Playbar Events
     playbar_prev.addEventListener('click', () => {
@@ -285,7 +285,7 @@ async function main() {
     // Event Listener For Cards
     for (let x = 0; x < Cards.length; x++) {
         const card = Cards[x];
-        card.addEventListener('click', (e) => {
+        card.addEventListener('click', (e)=>{
             let mainFolder_click = CardContainer[parseInt(e.currentTarget.dataset.id.split('&')[1])].dataset.main_folder
             let subFolder_click = e.currentTarget.dataset.main_sub_folder
 
@@ -293,7 +293,7 @@ async function main() {
             isPlay = false
             changeVolume()
             Change_button()
-            Circle.style.left = 0
+            Circle.style.left = 0 
         })
     }
 }
@@ -301,18 +301,18 @@ async function main() {
 main()
 
 // left Section slide functionality // Not Working !
-slider.addEventListener('drag', (e) => {
-    e.preventDefault();
-    let X = e.clientX;
-
-    if(X > 270 && X < 500){
-        let body_width = document.getElementsByTagName('body')[0].clientWidth;
-        slider.style.left = X + "px";
-        left_section.style.width = X + "px";
-        right_section.style.width = (body_width-left_section.clientWidth) + "px";
+range_label.addEventListener('drag', (e) => {
+    let valueX = e.offsetX
+    if (valueX >= -119 && valueX <= 191) {
+        range_label.style.left = (119 + valueX) + 'px'
+        if (valueX < 0) {
+            left_section.style.width = (left_section.style.width + valueX) + 'px'
+        }
+        else {
+        }
     }
+    e.stopPropagation()
 })
-
 
 // Hamburger Functionality
 {
@@ -326,5 +326,9 @@ slider.addEventListener('drag', (e) => {
         for (let i = 0; i < lines.length; i++) {
             lines[i].classList.toggle(lines_classes[i]);
         }
+    })
+
+    document.getElementsByTagName("html").addEventListener('click', () => {
+        left_section.classList.toggle('ham-left')
     })
 }
