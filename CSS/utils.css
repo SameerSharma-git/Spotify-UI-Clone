@@ -1,0 +1,97 @@
+.invert {
+    filter: invert(1);
+}
+
+.flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.bg-grey {
+    background-color: #121212;
+}
+
+.color-black {
+    color: black;
+}
+
+.logo {
+    width: 23px;
+}
+
+.border-4px {
+    border-radius: 4px;
+}
+
+.bolder {
+    font-weight: 800;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.right-section-margin-left {
+    margin-left: 10px;
+}
+
+/* hamburger */
+
+.hamburger {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.ham-lines {
+    background-color: white;
+    position: absolute;
+    height: 5px;
+    width: 70%;
+    margin: 0 auto;
+    transition: all cubic-bezier(0.39, 0.64, 0.22, 1.01) .3s;
+}
+
+.ham-lines:nth-child(1) {
+    top: 25%;
+}
+
+.ham-lines:nth-child(2) {
+    top: 50%;
+}
+
+.ham-lines:nth-child(3) {
+    top: 75%;
+}
+
+.first-line{
+    top: 50% !important;
+    transform: (-50%, -50%);
+    rotate: 45deg;
+}
+
+.second-line{
+    opacity: 0;
+}
+
+.third-line{
+    top: 50% !important;
+    transform: (-50%, 50%);
+    rotate: -45deg;
+}

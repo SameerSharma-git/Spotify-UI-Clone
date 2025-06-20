@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Images/Icons/favicons/web/icons8-spotify-windows-11-color-32.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/utils.css">
+    <title>Spotify</title>
+
+<body class="flex">
+    <section class="leftSection ham-left">
+        <div class="home border-box bg-grey border-4px flex leftSection-padding">
+            <ul class="flex">
+                <li class="flex align-center">
+                    <img class="logo invert" src="../Images/Icons/spotify.svg" alt="Spotify">
+                    <span class="bolder">Spotify</span>
+                </li>
+                <li class="flex align-center pointer">
+                    <img class="logo invert" src="../Images/Icons/home.svg" alt="Home">
+                    <span class="bolder">Home</span>
+                </li>
+                <li class="flex align-center pointer">
+                    <img class="logo invert" src="../Images/Icons/search.svg" alt="Search">
+                    <span>Search</span>
+                </li>
+            </ul>
+        </div>
+        <div class="library border-box bg-grey flex border-4px leftSection-padding">
+            <div class="library-heading align-center flex">
+                <div class="flex align-center justify-center">
+                    <img class="library-logo invert" src="../Images/Icons/icons8-library-48.png" alt="Library">
+                    <span>Your Library</span>
+                </div>
+                <div class="plus flex align-center justify-center pointer"><img class="invert"
+                        src="../Images/Icons/plus.svg" alt="plus"></div>
+            </div>
+            <div class="leftMain">
+                <div class="playlist">
+                    <ul>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="library-para flex">
+                    <div class="para">
+                        <p>Create your first playlist</p>
+                        <p>Its easy, we'l'help you</p>
+                    </div>
+                    <button class="color-black pointer">Create Playlist</button>
+                </div>
+                <div class="library-para flex">
+                    <div class="para">
+                        <p>Lets find some podcasts to follow</p>
+                        <p>We'll keep you updated on new episodes</p>
+                    </div>
+                    <button class="color-black pointer">Browse Podcasts</button>
+                </div>
+                <div class="left-footer flex align-center">
+                    <div style="row-gap: 8px;" class="left-footer-items flex align-center">
+                        <span>Layout</span>
+                        <span>Privacy Centre</span>
+                        <span>Privacy Centre</span>
+                        <span>Creative</span>
+                        <span>About Us</span>
+                        <span>Acessability</span>
+                    </div>
+                    <button class="language pointer">English</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div draggable="true" for="width" id="slider"><div id="range-label"></div></div>
+    <section class="rightSection">
+        <div class="rightNav right-section-margin-left flex align-center rightSection-padding border-4px">
+            <div class="search">
+                <input class="color-black" type="search" placeholder="Search">
+            </div>
+            <div class="ham-container flex align-center">
+                <div class="nav-buttons flex align-center">
+                    <button class="signup">Sign Up</button>
+                    <button class="login">Log In</button>
+                </div>
+                <div class="hamburger">
+                    <div class="ham-lines"></div>
+                    <div class="ham-lines"></div>
+                    <div class="ham-lines"></div>
+                </div>
+            </div>
+        </div>
+        <h2>Spotify Playists</h2>
+        <main id="main">
+            <!-- <div class="card-container right-section-margin-left border-4px bg-grey flex">
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/ai-generated-8697969_1280.jpg" alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/medium-vecteezy_a-vibrant-disco-ball-reflecting-colorful-light-patterns-at-a_53212030_medium.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/vecteezy_musical-vortex-an-abstract-composition-of-piano-keys_24063443.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/vecteezy_musical-vortex-an-abstract-composition-of-piano-keys_24067382.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/violin-924349_1920.jpg" alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+            </div> -->
+            <!-- <div class="card-container right-section-margin-left border-4px bg-grey flex">
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/ai-generated-8697969_1280.jpg" alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/medium-vecteezy_a-vibrant-disco-ball-reflecting-colorful-light-patterns-at-a_53212030_medium.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/vecteezy_musical-vortex-an-abstract-composition-of-piano-keys_24063443.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/vecteezy_musical-vortex-an-abstract-composition-of-piano-keys_24067382.jpg"
+                        alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="cards flex">
+                    <div class="play flex align-center justify-center"><img src="../Images/Icons/play.svg" alt=""></div>
+                    <img src="../Images/violin-924349_1920.jpg" alt="preview">
+                    <h3>Happy Hits</h3>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+            </div> -->
+        </main>
+        <div class="playbar flex align-center">
+            <div class="playbar-upper flex align-center">
+                <div class="playbar-song-info"></div>
+                <div class="playbar-buttons flex justify-center align-center">
+                    <img class="invert pointer playbar-button-individual" src="../Images/Icons/icons8-previous-100.png"
+                        alt="">
+                    <img class="invert pointer playbar-button-individual" src="../Images/Icons/play.svg" alt="">
+                    <img class="invert pointer playbar-button-individual" src="../Images/Icons/icons8-end-100.png"
+                        alt="">
+                </div>
+                <div class="mute-info flex align-center justify-center">
+                    <div class="playbar-song-timestamp flex justify-center align-center">
+                        <span>00:00</span>
+                        <span> / </span>
+                        <span>00:00</span>
+                    </div>
+                    <div class="mute flex align-center justify-center">
+                        <img id="speaker-img" class="invert" src="../Images/Icons/icons8-volume-100.png" alt="">
+                        <input type="range" value="100" min="0" max="100" id="volume-range">
+                    </div>
+                </div>
+            </div>
+            <div class="seekbar">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </section>
+    <script src="../script.js"></script>
+</body>
+
+</html>
