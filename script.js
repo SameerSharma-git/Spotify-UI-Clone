@@ -1,4 +1,3 @@
-let songData = await fetch(`https://sameersharma-git.github.io/Spotify-UI-Clone/Songs/${Folder}/${SubFolder}`)
 let url = "https://sameersharma-git.github.io/Spotify-UI-Clone"
 
 let songs
