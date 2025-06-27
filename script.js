@@ -1,4 +1,4 @@
-let url = "https://spotify-ui-clone-sam.netlify.app/"
+let url = "https://sameersharma-git.github.io/Spotify-UI-Clone/"
 
 let songs
 let Folders = []
